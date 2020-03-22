@@ -14,6 +14,6 @@ namespace MicroRabbitMQ.Domain.Core.Bus
 
         void Subscribe<T, TH>()
             where T : Event
-            where TH : IEventHandler;
+            where TH : IEventHandler<T>;
     }
 }
