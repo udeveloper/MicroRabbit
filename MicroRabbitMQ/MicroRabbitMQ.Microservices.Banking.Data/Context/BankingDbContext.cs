@@ -1,0 +1,18 @@
+﻿using MicroRabbitMQ.Microservices.Banking.Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MicroRabbitMQ.Microservices.Banking.Data.Context
+{
+    public class BankingDbContext: DbContext
+    {
+        public BankingDbContext(DbContextOptions options):base(options)
+        {
+
+        }
+
+        public DbSet<Account> Accounts { get; set; }
+    }
+}
