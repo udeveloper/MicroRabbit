@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace MicroRabbitMQ.Microservices.Banking.Data.Migrations
+namespace MicroRabbitMQ.Microservices.Banking.Data.Migrations.postgresql
 {
-    public partial class MigracionInicial : Migration
+    public partial class InicialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +12,7 @@ namespace MicroRabbitMQ.Microservices.Banking.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     AccountType = table.Column<string>(nullable: true),
                     AccountBalance = table.Column<decimal>(nullable: false)
                 },

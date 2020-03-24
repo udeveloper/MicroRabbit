@@ -20,7 +20,7 @@ namespace MicroRabbitMQ.Microservices.Banking.Api.Extensions
         {
             services.AddDbContext<BankingDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("BankingDbConnection"));
+                options.UseNpgsql(configuration.GetConnectionString("BankingDbConnection"));
             });
         }
     }
