@@ -16,7 +16,15 @@ namespace MicroRabbitMQ.Microservices.Banking.Api.Extensions
             });
         }
 
-        public static void ConfigureContext(this IServiceCollection services, IConfiguration configuration)
+        public static void ConfigureContextSqlServer(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<BankingDbContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("BankingDbConnection"));
+            });
+        }
+
+        public static void ConfigureContextPostgress(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<BankingDbContext>(options =>
             {
