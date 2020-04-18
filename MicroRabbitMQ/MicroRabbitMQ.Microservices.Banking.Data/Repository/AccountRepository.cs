@@ -4,6 +4,9 @@ using MicroRabbitMQ.Microservices.Banking.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace MicroRabbitMQ.Microservices.Banking.Data.Repository
 {
@@ -15,9 +18,9 @@ namespace MicroRabbitMQ.Microservices.Banking.Data.Repository
         {
             _dbContext = dbContext;
         }
-        public IEnumerable<Account> GetAccounts()
+        public async Task<IEnumerable<Account>> GetAccounts()
         {
-            return _dbContext.Accounts;
+            return await _dbContext.Accounts.ToListAsync();
         }
     }
 }
