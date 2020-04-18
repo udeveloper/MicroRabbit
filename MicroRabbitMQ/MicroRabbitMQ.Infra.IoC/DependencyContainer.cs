@@ -8,6 +8,7 @@ using MicroRabbitMQ.Microservices.Banking.Data.Repository;
 using MicroRabbitMQ.Microservices.Banking.Domain.CommandHandlers;
 using MicroRabbitMQ.Microservices.Banking.Domain.Commands;
 using MicroRabbitMQ.Microservices.Banking.Domain.Interfaces;
+using MicroRabbitMQ.Microservices.Transfer.Data.Context;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,8 @@ namespace MicroRabbitMQ.Infra.IoC
 
             //Data
             services.AddTransient<IAccountRepository, AccountRepository>();
-            services.AddTransient<BankingDbContext>();
+            
 
-           
         }
     }
 }

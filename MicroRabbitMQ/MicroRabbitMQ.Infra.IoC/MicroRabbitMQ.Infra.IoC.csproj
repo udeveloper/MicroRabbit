@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +15,7 @@
     <ProjectReference Include="..\MicroRabbitMQ.Infra.Bus\MicroRabbitMQ.Infra.Bus.csproj" />
     <ProjectReference Include="..\MicroRabbitMQ.Microservices.Banking.Application\MicroRabbitMQ.Microservices.Banking.Application.csproj" />
     <ProjectReference Include="..\MicroRabbitMQ.Microservices.Banking.Data\MicroRabbitMQ.Microservices.Banking.Data.csproj" />
+    <ProjectReference Include="..\MicroRabbitMQ.Microservices.Transfer.Data\MicroRabbitMQ.Microservices.Transfer.Data.csproj" />
   </ItemGroup>
 
 </Project>
